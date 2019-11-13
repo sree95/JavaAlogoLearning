@@ -37,7 +37,6 @@ public class BigO {
         }
         System.out.println("This is O(n) complexity");
     }
-
     public static void nestedForLoop(int n){
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -45,6 +44,64 @@ public class BigO {
             }
         }
         System.out.println("This is O(n^2) complexity");
+    }
+
+    public static void twoForLoops(int n){
+        for (int i = 0; i < n; i++) {
+            System.out.println("Printing "+ i);
+        }
+        for (int i = 0; i < 100; i++) {
+            System.out.println("Printing "+ i);
+        }
+        System.out.println("This is O(n) complexity");
+    }
+
+    public static void twoForLoopsNM(int n, int m){
+        for (int i = 0; i < n; i++) {
+            System.out.println("Printing "+ i);
+        }
+        for (int i = 0; i < m; i++) {
+            System.out.println("Printing "+ i);
+        }
+        System.out.println("This is O(n+m) complexity");
+    }
+
+    public static void twoForLoopsNAndM(int n, int m){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.println("Printing "+ i * j);
+            }
+        }
+        System.out.println("This is O(n * m) complexity");
+    }
+
+    public static void twoForLoopsNestedAndNonNested(int n){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.println(String.format("Product of %s and %s is %s", i,j, i*j));
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println("Printing "+ i);
+        }
+        System.out.println("This is O(n* n) complexity");
+    }
+
+    public static void twoLoopsNotCompleteStraightForward(int n){
+        for (int i = 0; i < n; i++) {
+            for (int j = n; j < n/2; j--) {
+                System.out.println(String.format("Value of i: %s j: %s", i,j));
+            }
+        }
+        System.out.println("This is O(n * n/2) == O(n^2) complexity");
+    }
+
+    public static void doublingLoopVariable(int n){
+        for (int i = 0; i < n;) {
+            System.out.println("Value of i is: "+ i);
+            i = i *2;
+        }
+        System.out.println("This is O(n/2) or O(nlogn) complexity");
     }
 
     public static void main(String[] args) {
